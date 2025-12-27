@@ -1,0 +1,315 @@
+/* public/style.css or just style.css in root */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f4f6f9;
+    --accent-gold: #d4af37;
+    --text-light: #e0e0e0;
+    --text-dark: #333;
+    --font-primary: 'Segoe UI', 'Roboto', sans-serif;
+    --font-secondary: 'Georgia', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #333;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand-logo .gold {
+    color: var(--accent-gold);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-gold);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--accent-gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #f3c648;
+}
+
+/* Sections */
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+/* Services Section */
+#services {
+    background-color: #151515;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--primary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+}
+
+.service-card h3 {
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.service-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* About Section */
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #151515;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    color: var(--accent-gold);
+    margin-right: 10px;
+    width: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #2c2c2c;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.contact-form .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.main-footer {
+    background: #111;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-gold);
+}
+
+.main-footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Booking Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--primary-color);
+    border: 1px solid #333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.close-modal:hover { color: #fff; }
+
+.modal-content .form-group { margin-bottom: 15px; }
+.modal-content .form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-light); }
+.modal-content .form-control { width: 100%; padding: 10px; border: 1px solid #333; background: #2c2c2c; border-radius: 5px; font-size: 14px; color: #fff; }
+.modal-content .form-control:focus { outline: none; border-color: var(--accent-gold); }
+.modal-content .btn { width: 100%; border: none; cursor: pointer; margin-top: 10px; }

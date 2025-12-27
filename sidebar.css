@@ -1,0 +1,193 @@
+/* 
+ * Barbershop Admin Sidebar Styles
+ * Theme: Dark Luxury (Charcoal & Gold)
+ */
+
+:root {
+    --sidebar-width: 260px;
+    --sidebar-bg: #1a1a1a;
+    --sidebar-bg-hover: #252525;
+    --sidebar-text: #e0e0e0;
+    --sidebar-text-muted: #888888;
+    --accent-gold: #d4af37;
+    --accent-gold-hover: #f3c648;
+    --border-color: #333333;
+    --transition-speed: 0.3s;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Sidebar Container */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-speed) ease;
+}
+
+/* 1. Header / Logo Area */
+.sidebar-header {
+    padding: 25px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: var(--accent-gold);
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.brand-name span {
+    color: var(--accent-gold);
+}
+
+/* 2. Navigation Links */
+.sidebar-nav {
+    flex: 1; /* Takes up remaining vertical space */
+    padding: 20px 0;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 4px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    color: var(--sidebar-text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-link i {
+    width: 24px; /* Fixed width for icon alignment */
+    margin-right: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Hover & Active States */
+.nav-link:hover {
+    background-color: var(--sidebar-bg-hover);
+    color: #fff;
+}
+
+.nav-link.active {
+    background-color: rgba(212, 175, 55, 0.1); /* Low opacity gold bg */
+    color: var(--accent-gold);
+    border-left-color: var(--accent-gold);
+}
+
+/* 3. User Profile / Footer */
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.user-role {
+    font-size: 12px;
+    color: var(--sidebar-text-muted);
+}
+
+.logout-btn {
+    color: var(--sidebar-text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+}
+
+.logout-btn:hover {
+    color: #ff4d4d; /* Red for logout warning */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide by default on mobile */
+    }
+
+    /* Class to add via JS to show sidebar */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
